@@ -8,7 +8,7 @@ async function getOne(id){
     return await House.findById(id).lean();
 }
 
-async function getFirst3(){
+async function getTopListings(){
     return await House.find().sort({createdAt:-1}).limit(3).lean();
 }
 
@@ -45,7 +45,7 @@ module.exports = {
     editHouse,
     deleteHouse,
     rentHouse,
-    getFirst3,
+    getTopListings,
     getHouseByHousingType
 }
 
