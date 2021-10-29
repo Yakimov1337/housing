@@ -4,7 +4,7 @@ const schema = new Schema({
     //TODO adapt parameters to project requirements
     name: { type: String, required: [true, "Name is required"], minlength: [6, "Min name length must be at least 6 chars long!"] },
     type: { type: String, required: true, enum: ["Apartment", "Villa", "House"] },
-    year: { type: Number, required: true, min: 1850, max: 2021 },
+    year: { type: Number, required: [true, "Year is required"], min: 1850, max: 2021 },
     city: { type: String, required: true, minlength: 4 },
     homeImage: { type: String, required: true, match: [/^https?:\/\//, 'Image must be a valid url!'] },
     propertyDescription: { type: String, required: true, maxlength: 60 },
